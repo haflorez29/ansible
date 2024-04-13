@@ -1,0 +1,15 @@
+# sintaxis requerida para correr un playbook
+- name: "firts playbook"
+# host es requerido, el grupo|nombre|ip donde quiere correr el playboook
+  hosts: localhost
+  # incluye variables de archivos dentro del playbook
+  vars_files:
+   - "{{playbook_dir}}/configTest1.yaml"
+  #array de la definicion de una tarea
+  tasks: #role -- collection
+   - name: "hacer debug de los facs"
+   # todos los hermanos de name son un modulos, es un grupo creado en python por la comunidad para hacer algo
+     debug:
+      # var: ansible_facts 
+      # se trae user de vars_files que apunta a un archivo
+       var: users[2].ips[0]

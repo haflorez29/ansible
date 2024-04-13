@@ -1,0 +1,7 @@
+[aws]
+18.207.233.248 ansible_ssh_private_key_file=/Users/heidy.florez/Downloads/abdul-bootcamp-1-2024.pem
+
+[aws:vars]
+APP_NAME=variable
+[app1]
+18.207.233.333

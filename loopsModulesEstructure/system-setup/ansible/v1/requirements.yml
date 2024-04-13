@@ -1,0 +1,2 @@
+# gestor de paquetes del proyecto e instalaciones de colecciones 
+# ansible colection instalar -file requirements.yml equivalente al package.json

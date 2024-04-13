@@ -1,0 +1,30 @@
+- name: "loop, modulos y estrcutura"
+  hosts: localhost
+  vars_files:
+   - "{{playbook_dir}}/sintaxis.yml"
+  tasks:
+    - name: "crear archivo"
+      # ansible.builtin.file: se puede usar todo el import o solo la parte final
+      file: 
+        # path: '/tmp/{{item.name}}.txt'
+        path: /Users/heidy.florez/Desktop/generalHeidy/{{item.name}}.txt
+        state: touch
+      # no puede estar al mismo nivel de file porque no pertenece a ese modulo
+      # loops: recorre arrays y objetos
+      with_items: "{{users}}"
+      # cada modulo tiene return value (dest, path)
+      # register registra la salida de la tarea en una variable 
+      register: file_output
+    - name: "debug"
+      debug:
+        var: file_output
+    - name: "country"
+      # si lo ejecuto por segunda vez y no hay cambio, no genera accion
+      lineinfile: 
+        path: '{{item.dest}}'
+        line: "hello"
+      with_items: "{{file_output.results}}"
+    
+    
+
+

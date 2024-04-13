@@ -1,0 +1,16 @@
+users: 
+ - name: "camilo"
+   country: "colombia"
+   ips:
+    - 102.123.23.24
+   isActive: true
+ - name: "andres"
+   country: "peru"
+   ips:
+    - 102.123.23.40
+   isActive: true
+ - name: "andrea"
+   country: "argentina"
+   ips:
+    - 102.123.23.30
+   isActive: true

@@ -1,0 +1,19 @@
+# cuando se crea el archivo ya se convierte en un objeto
+key1: "string"
+key2: 1
+key4: true
+# objeto
+padre:
+ hijo: camilo
+ hijo2: camilo
+ padre: 
+  hijo: andres
+  hijo2: andres2
+#tipos de datos
+# string  --"2"
+# int --2
+# float --3.2
+# objeto {key:valor}
+# array [0:valor]
+# bool -- true--false --1.0
+# null - undefined - nil -- empty

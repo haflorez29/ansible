@@ -1,0 +1,20 @@
+- name: "inventory"
+  hosts: aws
+  tasks:
+    # - name: "debug de ansible facs"
+    #   debug:
+    #     var: ansible_facts
+    - name: "enable nginx"
+      shell: "amazon-linux-extras enable nginx1"
+      become: true
+      # se ejecuta la tarea como sudo (administrador)
+
+    - name: "install nginx services"
+      shell: "amazon-linux-extras install nginx1 -y"
+      become: true
+      
+    - name: "run nginx services"
+      service: #systemctl start nginx --- service nginx start
+        name: nginx
+        state: started
+      become: true
