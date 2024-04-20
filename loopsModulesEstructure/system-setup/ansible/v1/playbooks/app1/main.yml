@@ -1,5 +1,7 @@
 - name: "inventory"
-  hosts: aws
+  # hosts: aws
+  hosts:
+    - app1
   tasks:
     # - name: "debug de ansible facs"
     #   debug:

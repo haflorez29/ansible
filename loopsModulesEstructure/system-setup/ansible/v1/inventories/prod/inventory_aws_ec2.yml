@@ -1,0 +1,28 @@
+--- 
+# paquete se debe instalar con ansible galaxy
+# https://docs.ansible.com/ansible/latest/collections/amazon/aws/aws_ec2_inventory.html
+plugin: aws_ec2 #amazon.aws.aws_ec2
+regions:
+  - us-east-1
+  # - us-east-2
+  # si no se pone busca un profile default, no es buena practica
+aws_profile: ansible
+hostsnames: #tipo de atributo quiero que mi inventario dinamico traiga para consturir cada direccionamiento de ip
+  - ip-address
+  # que obtenga las insntacia por la ip-adress: ip publica
+# para que mi inventario dinamico pueda filtrar las ips
+filters:
+  instance-state-name: "running"
+  tag:owner:
+    - abdul.florez
+    # tag que se le agrega a la instancia
+  # tag:env: prod
+
+# array que dice porque llave quiere que yo agrupe o cree los grupos
+# por cada instnacia lea una varialbe que se llame AnsibleGroup: que es un tag que agrego a la instancia
+# AnsibleGroup: app1, porque asi se llama en el v1/playbooks/app/main/hosts
+keyed_groups:
+    # tag que se le agrega a la instancia
+    # es como si en el inventario estatico crearamos un grupo con nombre app1 y otro con app2 y asi lo que asignemos a este tag AnsibleGrokup
+  - key: tags.AnsibleGroup
+    separator: ""

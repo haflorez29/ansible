@@ -1,2 +1,6 @@
 # gestor de paquetes del proyecto e instalaciones de colecciones 
 # ansible colection instalar -file requirements.yml equivalente al package.json
+---
+collections:
+  - name: amazon.aws
+    version: 5.4.0
