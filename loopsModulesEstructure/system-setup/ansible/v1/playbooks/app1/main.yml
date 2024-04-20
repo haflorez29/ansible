@@ -6,8 +6,8 @@
     #     var: ansible_facts
     - name: "enable nginx"
       shell: "amazon-linux-extras enable nginx1"
-      become: true
       # se ejecuta la tarea como sudo (administrador)
+      become: true
 
     - name: "install nginx services"
       shell: "amazon-linux-extras install nginx1 -y"
