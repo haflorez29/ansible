@@ -1,0 +1,5 @@
+- name: "run nginx services"
+  service: 
+    name: nginx
+    state: started
+  become: true

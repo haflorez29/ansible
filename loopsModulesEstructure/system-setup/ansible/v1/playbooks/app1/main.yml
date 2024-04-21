@@ -1,22 +1,25 @@
-- name: "inventory"
+- name: "deploy app1"
   # hosts: aws
   hosts:
     - app1
-  tasks:
-    # - name: "debug de ansible facs"
-    #   debug:
-    #     var: ansible_facts
-    - name: "enable nginx"
-      shell: "amazon-linux-extras enable nginx1"
-      # se ejecuta la tarea como sudo (administrador)
-      become: true
+  roles:
+    - "nginx"
+    - "app"
+  # tasks:
+  #   # - name: "debug de ansible facs"
+  #   #   debug:
+  #   #     var: ansible_facts
+  #   - name: "enable nginx"
+  #     shell: "amazon-linux-extras enable nginx1"
+  #     # se ejecuta la tarea como sudo (administrador)
+  #     become: true
 
-    - name: "install nginx services"
-      shell: "amazon-linux-extras install nginx1 -y"
-      become: true
+  #   - name: "install nginx services"
+  #     shell: "amazon-linux-extras install nginx1 -y"
+  #     become: true
       
-    - name: "run nginx services"
-      service: #systemctl start nginx --- service nginx start
-        name: nginx
-        state: started
-      become: true
+  #   - name: "run nginx services"
+  #     service: #systemctl start nginx --- service nginx start
+  #       name: nginx
+  #       state: started
+  #     become: true

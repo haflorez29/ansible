@@ -1,0 +1,3 @@
+- name: "enable nginx"
+  shell: "amazon-linux-extras enable nginx1"
+  become: true

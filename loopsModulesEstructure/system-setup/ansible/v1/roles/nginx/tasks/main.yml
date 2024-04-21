@@ -1,0 +1,5 @@
+---
+# tasks file for nginx
+- include_tasks: 01_install_nginx_package.yml
+- include_tasks: 02_install_nginx.yml
+- include_tasks: 03_run_nginx.yml

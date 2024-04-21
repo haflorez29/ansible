@@ -1,0 +1,4 @@
+---
+# tasks file for app
+- include_tasks: 01_login.yml
+- include_tasks: 02_secret.yml

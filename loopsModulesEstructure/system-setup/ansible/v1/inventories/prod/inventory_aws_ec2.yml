@@ -16,7 +16,7 @@ filters:
   tag:owner:
     - abdul.florez
     # tag que se le agrega a la instancia
-  # tag:env: prod
+  tag:env: prod
 
 # array que dice porque llave quiere que yo agrupe o cree los grupos
 # por cada instnacia lea una varialbe que se llame AnsibleGroup: que es un tag que agrego a la instancia

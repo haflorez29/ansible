@@ -1,0 +1,6 @@
+- name: "deploy app2"
+  hosts:
+    - app2
+  roles:
+    - "nginx"
+    - "app"
